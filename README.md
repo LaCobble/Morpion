@@ -1,5 +1,9 @@
 # Morpion
 
+<p align="center">
+<img src="https://github.com/LaCobble/Morpion/assets/71151090/d6e67732-2881-430c-9e40-641219145970" width=40% height=40%>
+</p>
+
 This project is a Java program that implements the game of Tic-Tac-Toe using the Minimax algorithm to calculate the best possible move at each turn.
 
 ## Game Overview
