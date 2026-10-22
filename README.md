@@ -1,44 +1,101 @@
-# Morpion
+# Morpion (Tic-Tac-Toe)
 
-<p align="center">
-<img src="https://github.com/LaCobble/Morpion/assets/71151090/d6e67732-2881-430c-9e40-641219145970" width=40% height=40%>
-</p>
+[![CI](https://github.com/LaCobble/Morpion/actions/workflows/ci.yml/badge.svg)](https://github.com/LaCobble/Morpion/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Java 17](https://img.shields.io/badge/Java-17-orange.svg)
+![Console](https://img.shields.io/badge/UI-console-lightgrey.svg)
 
-This project is a Java program that implements the game of Tic-Tac-Toe using the Minimax algorithm to calculate the best possible move at each turn.
+A console Tic-Tac-Toe ("morpion" in French) in Java, where the computer picks its moves with the **Minimax** algorithm.
 
-## Game Overview
+## What it does
 
-Tic-Tac-Toe is a popular game played on a 3x3 grid. Two players take turns, one playing with the symbol "X" and the other with the symbol "O". The goal of the game is to align three identical symbols horizontally, vertically, or diagonally.
+- Displays a 3 x 3 board in the terminal.
+- You play `0`: enter the row (`X`) then the column (`Y`) of your move, each between 0 and 2.
+- The computer plays `X` and answers with the best move found by Minimax.
+- The game stops when a player aligns three symbols (row, column or diagonal) or the board is full.
 
-## Features
+Real session (the player's input is not echoed: they entered 1,1, then 0,0, which was already taken and therefore ignored, then 2,1, and lost):
 
-- The game is implemented using Java.
-- The Minimax algorithm is used to calculate the best possible move for the computer player at each turn.
-- The user interface is console-based.
-- Players can enter the coordinates of a cell to place their move.
-- The game checks if either player has won or if the game is a tie.
-- The game displays the board at each turn and informs the players of the game result.
+```text
+|_|_|_|
+|_|_|_|
+|_|_|_|
 
-## Screenshots
+Turn P1
+Please enter the coord X:
+Please enter the coord Y:
+Turn IA
 
-Here are some screenshots of the game:
+|X|_|_|
+|_|0|_|
+|_|_|_|
 
-![Screenshot 1](https://user-images.githubusercontent.com/71151090/158796231-776779b6-7001-4d01-bf89-80ade146fcd5.png)
+Turn P1
+Please enter the coord X:
+Please enter the coord Y:
+Turn IA
 
-![Screenshot 2](https://user-images.githubusercontent.com/71151090/158796834-95e903f2-fb1b-4883-b3ce-896220d96c84.png)
+|X|X|_|
+|_|0|_|
+|_|_|_|
 
-## How to Use the Program
+Turn P1
+Please enter the coord X:
+Please enter the coord Y:
+Turn IA
 
-1. Make sure you have Java installed on your system.
-2. Clone the GitHub repository to your machine.
-3. Open the project in your Java development environment.
-4. Compile and run the `Main.java` file.
-5. Follow the instructions displayed in the console to play Tic-Tac-Toe.
+|X|X|X|
+|_|0|_|
+|_|0|_|
 
-## Notes
+FINI
+```
 
-- This program does not have a graphical user interface. All interactions are done via the console.
-- You can modify the code to add a graphical user interface if desired.
-- Feel free to customize the game by adding additional features or improving the user interface.
+## Requirements
 
-I hope this helps you create your Tic-Tac-Toe project on GitHub. If you have any further questions, feel free to ask!
+- A JDK (tested with JDK 17).
+
+## Build and run
+
+```bash
+git clone https://github.com/LaCobble/Morpion.git
+cd Morpion
+javac -encoding UTF-8 -d out src/*.java
+java -cp out Main
+```
+
+## Project structure
+
+```
+src/
+├── Main.java                  # Game loop: player turn, then computer turn
+├── Board.java                 # Board, win detection, player input, Minimax
+├── PointsAndScores.java       # A candidate move and its Minimax score
+├── ApplicationException.java  # Coordinate out of range
+└── IntException.java          # Input is not an integer
+```
+
+## What it demonstrates
+
+- The **Minimax** algorithm: a recursive exploration of every possible continuation, scoring wins (+1), losses (-1) and draws (0), to choose the best move for the computer.
+- Game-state modelling on a 2D array, with row, column and diagonal win detection.
+- Custom checked exceptions for input validation.
+
+## Known limitations
+
+Kept as written for the assignment:
+
+- An invalid input (out-of-range coordinate or non-integer) stops the program with an exception instead of asking again.
+- Choosing a cell that is already taken is silently ignored, and the turn passes to the computer.
+
+## Context
+
+School project (2022), algorithms course. The comments and some identifiers are in French.
+
+## Contributing
+
+This is an archived learning project, but issues and pull requests are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## License
+
+[MIT](LICENSE) © LaCobble
