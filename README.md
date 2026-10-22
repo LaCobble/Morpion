@@ -14,51 +14,18 @@ A console Tic-Tac-Toe ("morpion" in French) in Java, where the computer picks it
 - The computer plays `X` and answers with the best move found by Minimax.
 - The game stops when a player aligns three symbols (row, column or diagonal) or the board is full.
 
-<p align="center">
-<img src="docs/images/morpion-run.webp" width="360" alt="Terminal session: the player enters 1,1 then 0,0 then 2,1; the computer, playing X, completes the top row and wins">
-</p>
+## Screenshots
 
-*A real game, rendered from the program's console output (the player's input is shown in green): the player entered 1,1, then 0,0, which was already taken and therefore ignored, then 2,1, and lost.*
+<table>
+  <tr>
+    <td align="center" valign="top" width="25%"><img src="docs/images/morpion-start.webp" alt="New game: empty board, the player plays the centre, the computer answers in a corner"><br><sub>New game</sub></td>
+    <td align="center" valign="top" width="25%"><img src="docs/images/morpion-mid.webp" alt="Mid-game: the player blocks the left column, the computer blocks the middle row"><br><sub>Mid-game</sub></td>
+    <td align="center" valign="top" width="25%"><img src="docs/images/morpion-win.webp" alt="The computer completes the top row and wins"><br><sub>The computer wins</sub></td>
+    <td align="center" valign="top" width="25%"><img src="docs/images/morpion-draw.webp" alt="Full board with no line of three: draw"><br><sub>Draw</sub></td>
+  </tr>
+</table>
 
-<details>
-<summary>Same session as text</summary>
-
-```text
-|_|_|_|
-|_|_|_|
-|_|_|_|
-
-Turn P1
-Please enter the coord X:
-Please enter the coord Y:
-Turn IA
-
-|X|_|_|
-|_|0|_|
-|_|_|_|
-
-Turn P1
-Please enter the coord X:
-Please enter the coord Y:
-Turn IA
-
-|X|X|_|
-|_|0|_|
-|_|_|_|
-
-Turn P1
-Please enter the coord X:
-Please enter the coord Y:
-Turn IA
-
-|X|X|X|
-|_|0|_|
-|_|0|_|
-
-FINI
-```
-
-</details>
+*Rendered from the real console output of local runs; the coordinates typed by the player are shown in green after each prompt (the program does not echo them). The player plays 0, the computer X.*
 
 ## Requirements
 
