@@ -14,7 +14,14 @@ A console Tic-Tac-Toe ("morpion" in French) in Java, where the computer picks it
 - The computer plays `X` and answers with the best move found by Minimax.
 - The game stops when a player aligns three symbols (row, column or diagonal) or the board is full.
 
-Real session (the player's input is not echoed: they entered 1,1, then 0,0, which was already taken and therefore ignored, then 2,1, and lost):
+<p align="center">
+<img src="docs/images/morpion-run.webp" width="360" alt="Terminal session: the player enters 1,1 then 0,0 then 2,1; the computer, playing X, completes the top row and wins">
+</p>
+
+*A real game, rendered from the program's console output (the player's input is shown in green): the player entered 1,1, then 0,0, which was already taken and therefore ignored, then 2,1, and lost.*
+
+<details>
+<summary>Same session as text</summary>
 
 ```text
 |_|_|_|
@@ -50,6 +57,8 @@ Turn IA
 
 FINI
 ```
+
+</details>
 
 ## Requirements
 
